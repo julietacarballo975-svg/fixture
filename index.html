@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial FIFA 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>🏆 Mundial FIFA 2026</h1>
+    <p>Fixture Oficial</p>
+
+</header>
+
+<section class="contador">
+
+    <h2>⏳ Cuenta regresiva</h2>
+
+    <div id="countdown">
+        365 días
+    </div>
+
+</section>
+
+<section class="busqueda">
+
+    <input type="text" placeholder="Buscar selección...">
+
+</section>
+
+
+<main class="contenedor">
+
+<div class="card">
+
+<img src="imagenes/animales.jpg">
+
+<div class="info">
+
+<h2>Grupo A</h2>
+
+<p>📅 11/06/2026</p>
+<p>⏰ 20:00</p>
+<p>🏟️ Estadio Azteca</p>
+<p>🏙️ Ciudad de México</p>
+
+<div class="equipos">
+
+<div class="equipo">
+
+<img src="imagenes/seleccion argentina.jpg">
+
+<h3>Argentina</h3>
+
+</div>
+
+<div class="resultado">
+
+<input type="number">
+
+<span>VS</span>
+
+<input type="number">
+
+<button>Guardar</button>
+
+</div>
+
+<div class="equipo">
+
+<img src="imagenes/seleccion mexicana.webp">
+
+<h3>México</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<section class="fase-grupos">
+
+<h2>⚽ Fase de Grupos</h2>
+
+<div class="grid">
+
+<div class="grupo">
+
+<h3>Grupo A</h3>
+
+<div class="partido">
+ARG
+<input type="number">
+VS
+<input type="number">
+MEX
+</div>
+
+<div class="partido">
+KOR
+<input type="number">
+VS
+<input type="number">
+DEN
+</div>
+
+</div>
+
+<div class="grupo">
+
+<h3>Grupo J</h3>
+
+<div class="partido">
+ARG
+<input type="number">
+VS
+<input type="number">
+AUS
+</div>
+
+<div class="partido">
+JOR
+<input type="number">
+VS
+<input type="number">
+ARG
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="llaves">
+
+<h2>🏆 Fase Final</h2>
+
+<div class="final">
+
+<input type="text" placeholder="Finalista 1">
+
+<span>VS</span>
+
+<input type="text" placeholder="Finalista 2">
+
+</div>
+
+</section>
+
+<footer>
+
+Mundial FIFA 2026 ©
+
+</footer>
+<script>
+
+const fechaMundial = new Date("Jun 11, 2026 17:00:00").getTime();
+
+const contador = setInterval(function() {
+
+    const ahora = new Date().getTime();
+
+    const diferencia = fechaMundial - ahora;
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        dias + " días " +
+        horas + " horas " +
+        minutos + " min " +
+        segundos + " seg";
+
+    if (diferencia < 0) {
+        clearInterval(contador);
+        document.getElementById("countdown").innerHTML = "⚽ ¡Comenzó el Mundial!";
+    }
+
+}, 1000);
+
+</script>
+</body>
+</html>
